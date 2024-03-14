@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{CF746265-6485-4E47-AE34-3EF8EF7B2695}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{240A925F-FEA7-4690-B1E9-E01203BA223A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{A4238CA3-1B86-4AE5-9EDF-3730C3B7B8FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FB380FA9-FF89-4783-8F0F-E5BADA14982E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Services.CouponAPI", "..\Vegapunk.Services.CouponAPI\Vegapunk.Services.CouponAPI.csproj", "{10776F98-1A61-4960-AFFB-2B367900EB54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.FrontEnd.Shaka", "..\Vegapunk.FrontEnd.Shaka\Vegapunk.FrontEnd.Shaka.csproj", "{4748CA32-ED93-40BA-B487-658CD35526C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Services.AuthAPI", "Vegapunk.Services.AuthAPI\Vegapunk.Services.AuthAPI.csproj", "{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Services.ProductAPI", "Vegapunk.Services.ProductAPI\Vegapunk.Services.ProductAPI.csproj", "{06DEC8B3-503B-4F98-A997-84500CB358C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegapunk.Services.ShoppingCartAPI", "Vegapunk.Services.ShoppingCartAPI\Vegapunk.Services.ShoppingCartAPI.csproj", "{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10776F98-1A61-4960-AFFB-2B367900EB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10776F98-1A61-4960-AFFB-2B367900EB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10776F98-1A61-4960-AFFB-2B367900EB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10776F98-1A61-4960-AFFB-2B367900EB54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4748CA32-ED93-40BA-B487-658CD35526C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4748CA32-ED93-40BA-B487-658CD35526C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4748CA32-ED93-40BA-B487-658CD35526C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4748CA32-ED93-40BA-B487-658CD35526C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DEC8B3-503B-4F98-A997-84500CB358C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DEC8B3-503B-4F98-A997-84500CB358C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DEC8B3-503B-4F98-A997-84500CB358C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DEC8B3-503B-4F98-A997-84500CB358C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10776F98-1A61-4960-AFFB-2B367900EB54} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
+		{4748CA32-ED93-40BA-B487-658CD35526C1} = {CF746265-6485-4E47-AE34-3EF8EF7B2695}
+		{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
+		{06DEC8B3-503B-4F98-A997-84500CB358C5} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
+		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58339FE1-9170-4E04-82CD-995670332053}
+	EndGlobalSection
+EndGlobal

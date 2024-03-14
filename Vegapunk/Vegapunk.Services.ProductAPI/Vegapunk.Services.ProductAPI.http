@@ -1,0 +1,6 @@
+@Vegapunk.Services.ProductAPI_HostAddress = http://localhost:5251
+
+GET {{Vegapunk.Services.ProductAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
