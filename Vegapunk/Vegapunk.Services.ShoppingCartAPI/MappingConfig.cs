@@ -10,7 +10,7 @@ namespace Vegapunk.Services.ShoppingCartAPI
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
-                config.CreateMap<CartDetail, CartHeaderDto>().ReverseMap();
+                config.CreateMap<CartHeader, CartHeaderDto>().ReverseMap();
                 config.CreateMap<CartDetail, CartDetailDto>().ReverseMap();
             });
             return mappingConfig;

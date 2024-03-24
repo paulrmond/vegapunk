@@ -9,14 +9,17 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<ICouponService, CouponService>();
-builder.Services.AddHttpClient<ICouponService, CouponService>();
+builder.Services.AddHttpClient<IProductService, ProductService>();
+builder.Services.AddHttpClient<ICartService, CartService>();
 
 StaticData.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
 StaticData.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
+StaticData.ShoppingCartAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
 
 builder.Services.AddScoped<ICouponService, CouponService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 var app = builder.Build();
 
