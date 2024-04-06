@@ -60,6 +60,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                 }
 
                 responseDto.Result = cart;
+                responseDto.IsSuccess = true;
             }
             catch (Exception ex)
             {
@@ -122,12 +123,13 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                 if (cartHeaderFromDb == null) 
                 {
                     //create header and details
-                    CartHeader cartHeader = _mapper.Map<CartHeader>(cartDto);
+                    CartHeader cartHeader = _mapper.Map<CartHeader>(cartDto.CartHeader);
                     _db.CartHeaders.Add(cartHeader);
                     await _db.SaveChangesAsync();
                     cartDto.CartDetails.First().CartHeaderId = cartHeader.CarHeaderId;
                     _db.CartDetails.Add(_mapper.Map<CartDetail>(cartDto.CartDetails.First()));
                     await _db.SaveChangesAsync();
+                    responseDto.IsSuccess = true;
                 }
                 else
                 {
@@ -137,7 +139,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                     if(cartDetailsFromDb == null)
                     {
                         //create cartdetails
-                        cartDto.CartDetails.First().CartHeaderId = cartDetailsFromDb.CartHeaderId;
+                        cartDto.CartDetails.First().CartHeaderId = cartHeaderFromDb.CarHeaderId;
                         _db.CartDetails.Add(_mapper.Map<CartDetail>(cartDto.CartDetails.First()));
                         await _db.SaveChangesAsync();
                     }
@@ -150,6 +152,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                         _db.CartDetails.Update(_mapper.Map<CartDetail>(cartDto.CartDetails.First()));
                         await _db.SaveChangesAsync();
                     }
+                    responseDto.IsSuccess = true;
                     responseDto.Result = cartDto;
                 }
             }

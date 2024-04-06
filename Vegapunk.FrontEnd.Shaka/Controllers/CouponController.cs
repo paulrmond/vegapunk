@@ -16,7 +16,7 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
         {
             List<CouponDto>? list = new();
             ResponseDto? response = await _couponService.GetAllCouponAsync();
-            if (response != null && response.IsSuccess) 
+            if (response != null & response.IsSuccess) 
             {
                 list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
             }
@@ -38,7 +38,7 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
             if(ModelState.IsValid)
             {
                 ResponseDto? response = await _couponService.CreateCouponAsync(couponDto);
-                if(response != null && response.IsSuccess)
+                if(response != null & response.IsSuccess)
                 {
                     TempData["success"] = "Coupon created";
                     return RedirectToAction(nameof(CouponIndex));
@@ -57,9 +57,9 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
             {
                 ResponseDto? response = await _couponService.DeleteCouponAsync(couponId);
 
-                if(response != null && !response.IsSuccess)
+                if(response != null & !response.IsSuccess)
                     TempData["error"] = response.Message;
-                else if (response != null && response.IsSuccess)
+                else if (response != null & response.IsSuccess)
                 {
                     TempData["success"] = "Coupon deleted";
                 }

@@ -16,7 +16,7 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
         {
             List<ProductDto>? list = new();
             ResponseDto? response = await _ProductService.GetAllProductAsync();
-            if (response != null && response.IsSuccess) 
+            if (response != null & response.IsSuccess) 
             {
                 list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
             }
@@ -38,7 +38,7 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
             if(ModelState.IsValid)
             {
                 ResponseDto? response = await _ProductService.CreateProductAsync(ProductDto);
-                if(response != null && response.IsSuccess)
+                if(response != null & response.IsSuccess)
                 {
                     TempData["success"] = "Product created";
                     return RedirectToAction(nameof(ProductIndex));
@@ -57,9 +57,9 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
             {
                 ResponseDto? response = await _ProductService.DeleteProductAsync(ProductId);
 
-                if(response != null && !response.IsSuccess)
+                if(response != null & !response.IsSuccess)
                     TempData["error"] = response.Message;
-                else if (response != null && response.IsSuccess)
+                else if (response != null & response.IsSuccess)
                 {
                     TempData["success"] = "Product deleted";
                 }
@@ -71,7 +71,7 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
         {
             ProductDto? dto = new();
             ResponseDto? response = await _ProductService.GetProductByIdAsync(ProductId);
-            if (response != null && response.IsSuccess)
+            if (response != null & response.IsSuccess)
             {
                 dto = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
             }
@@ -89,9 +89,9 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
             {
                 ResponseDto? response = await _ProductService.UpdateProductAsync(dto);
 
-                if (response != null && !response.IsSuccess)
+                if (response != null & !response.IsSuccess)
                     TempData["error"] = response.Message;
-                else if (response != null && response.IsSuccess)
+                else if (response != null & response.IsSuccess)
                 {
                     TempData["success"] = "Product updated";
                 }
