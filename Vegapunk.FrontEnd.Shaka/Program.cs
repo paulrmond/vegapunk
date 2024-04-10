@@ -11,15 +11,18 @@ builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<ICouponService, CouponService>();
 builder.Services.AddHttpClient<IProductService, ProductService>();
 builder.Services.AddHttpClient<ICartService, CartService>();
+builder.Services.AddHttpClient<IOrderService, OrderService>();
 
 StaticData.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
 StaticData.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
 StaticData.ShoppingCartAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
+StaticData.OrderAPIBase = builder.Configuration["ServiceUrls:OrderAPI"];
 
 builder.Services.AddScoped<ICouponService, CouponService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();
 

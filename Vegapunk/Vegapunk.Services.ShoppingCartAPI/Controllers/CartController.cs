@@ -71,7 +71,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
             return responseDto;
         }
 
-        [HttpGet("ApplyCoupon")]
+        [HttpPost("ApplyCoupon")]
         public async Task<ResponseDto> ApplyCoupon([FromBody] CartDto cartDto)
         {
             try
@@ -82,6 +82,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                 await _db.SaveChangesAsync();
 
                 responseDto.Result = true;
+                responseDto.IsSuccess = true;
             }
             catch (Exception ex)
             {
@@ -92,7 +93,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
             return responseDto;
         }
 
-        [HttpGet("RemoveCoupon")]
+        [HttpPost("RemoveCoupon")]
         public async Task<ResponseDto> RemoveCoupon([FromBody] CartDto cartDto)
         {
             try
@@ -103,6 +104,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                 await _db.SaveChangesAsync();
 
                 responseDto.Result = true;
+                responseDto.IsSuccess = true;
             }
             catch (Exception ex)
             {
@@ -183,6 +185,7 @@ namespace Vegapunk.Services.ShoppingCartAPI.Controllers
                 }
                 await _db.SaveChangesAsync();
                 responseDto.Result = true;
+                responseDto.IsSuccess = true;
             }
             catch (Exception ex)
             {

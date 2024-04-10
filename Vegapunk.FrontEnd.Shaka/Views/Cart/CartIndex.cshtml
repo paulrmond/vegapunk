@@ -1,6 +1,10 @@
 ﻿@model CartDto
+@if (Model.CartHeader != null && Model.CartDetails.Count() > 0)
+{
 <form method="post">
     <br />
+    <input asp-for="CartHeader.UserId" hidden />
+    <input asp-for="CartHeader.CarHeaderId" hidden />
     <div class="">
         <div class="card border mt-4 container">
             <div class="card-header bg-dark text-light ml-0 row ">
@@ -41,7 +45,7 @@
                             <div style="font-size:11px;">@cartObj.Product.Description</div>
                     </div>
                     <div class="col-3 col-md-2 pt-md-4" style="font-size:11px;">
-                            <span style="font-size:17px;">@cartObj.Product.Amount </span>
+                            <span style="font-size:17px;"> @string.Format("{0:c}", @cartObj.Product.Amount) </span>
                     </div>
                     <div class="col-3 col-md-2 pt-md-4" style="font-size:11px;">
                             <span style="font-size:17px;"> @cartObj.Product.Count</span>
@@ -57,12 +61,25 @@
                 <div class="row">
                     <div class="col-6">
                         <span>Coupon:</span>
-                        <input />
-                        <button type="submit" class="btn btn-sm btn-success"> Apply </button>
+                        @if(string.IsNullOrEmpty(Model.CartHeader.CouponCode))
+                        {
+                            <input asp-for="CartHeader.CouponCode" />
+                            <button asp-action="ApplyCoupon" type="submit" class="btn btn-sm btn-success"> Apply </button>
+                        }
+                        else
+                        {
+                            <input asp-for="CartHeader.CouponCode" disabled />
+                            <button asp-action="RemoveCoupon" type="submit" class="btn btn-sm btn-success"> Remove </button>
+                        }
+
                     </div>
                     <div class="col-6 text-end">
-                        <span class="text-danger" style="font-size:21px;">  Order Total : $$ <br /></span>
-                        <span class="text-success"> Order Discount :  $$</span>
+                        <span class="text-danger" style="font-size:21px;">  Order Total : @string.Format("{0:c}", Model.CartHeader.CartTotal) <br /></span>
+                        @if (Model.CartHeader.Discount > 0)
+                        {
+                            <span class="text-success"> Order Discount :  @string.Format("{0:c}", Model.CartHeader.Discount)</span>
+                        }
+                        
                     </div>
                 </div>
             </div>
@@ -71,9 +88,14 @@
                     <button type="submit" class="btn btn-outline-danger form-control">Email Cart</button>
                 </div>
                 <div class="col-6 col-md-3 offset-md-6">
-                    <button disabled class="btn btn-success form-control " value="Checkout (Comming Soon!)" />
+                    <a asp-action="Checkout" class="btn btn-success form-control">Checkout</a>
                 </div>
             </div>
         </div>
     </div>
-</form>
+    </form>
+}
+else
+{
+    <h3 class="text-success"><i class="bi bi-cart"></i> &nbsp; No item in shopping cart</h3>
+}

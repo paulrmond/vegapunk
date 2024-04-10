@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Services.AuthAPI",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Services.ProductAPI", "Vegapunk.Services.ProductAPI\Vegapunk.Services.ProductAPI.csproj", "{06DEC8B3-503B-4F98-A997-84500CB358C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegapunk.Services.ShoppingCartAPI", "Vegapunk.Services.ShoppingCartAPI\Vegapunk.Services.ShoppingCartAPI.csproj", "{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Services.ShoppingCartAPI", "Vegapunk.Services.ShoppingCartAPI\Vegapunk.Services.ShoppingCartAPI.csproj", "{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegapunk.Integration.ServiceBus", "Vegapunk.Integration.ServiceBus\Vegapunk.Integration.ServiceBus.csproj", "{8F3CF29E-A278-4D0F-A342-E2931E6D9328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegapunk.Services.OrderAPI", "Vegapunk.Services.OrderAPI\Vegapunk.Services.OrderAPI.csproj", "{38B35337-6734-40EE-B290-48B41C6A7116}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,14 @@ Global
 		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3CF29E-A278-4D0F-A342-E2931E6D9328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3CF29E-A278-4D0F-A342-E2931E6D9328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3CF29E-A278-4D0F-A342-E2931E6D9328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3CF29E-A278-4D0F-A342-E2931E6D9328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B35337-6734-40EE-B290-48B41C6A7116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B35337-6734-40EE-B290-48B41C6A7116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B35337-6734-40EE-B290-48B41C6A7116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B35337-6734-40EE-B290-48B41C6A7116}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +69,8 @@ Global
 		{E1B7AC70-341E-4ACE-8834-9E12DCDAECDF} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
 		{06DEC8B3-503B-4F98-A997-84500CB358C5} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
 		{A38B7A8B-18CC-4AEB-BADE-826AA021B4DF} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
+		{8F3CF29E-A278-4D0F-A342-E2931E6D9328} = {A4238CA3-1B86-4AE5-9EDF-3730C3B7B8FC}
+		{38B35337-6734-40EE-B290-48B41C6A7116} = {FB380FA9-FF89-4783-8F0F-E5BADA14982E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58339FE1-9170-4E04-82CD-995670332053}

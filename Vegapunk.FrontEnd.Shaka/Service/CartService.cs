@@ -16,7 +16,7 @@ namespace Vegapunk.FrontEnd.Shaka.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = StaticData.ApiType.POST,
-                Url = StaticData.CouponAPIBase + "/api/cart/ApplyCoupon",
+                Url = StaticData.ShoppingCartAPIBase + "/api/cart/ApplyCoupon/",
                 Data = cartDto
             });
         }
@@ -35,7 +35,7 @@ namespace Vegapunk.FrontEnd.Shaka.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = StaticData.ApiType.POST,
-                Url = StaticData.CouponAPIBase + "/api/cart/RemoveCart/",
+                Url = StaticData.ShoppingCartAPIBase + "/api/cart/RemoveCart/",
                 Data = cartDetailsId
             });
         }

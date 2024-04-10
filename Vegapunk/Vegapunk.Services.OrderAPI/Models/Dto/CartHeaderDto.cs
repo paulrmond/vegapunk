@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Vegapunk.FrontEnd.Shaka.Models
+namespace Vegapunk.Services.OrderAPI.Models.Dto
 {
     public class CartHeaderDto
     {
@@ -10,11 +10,8 @@ namespace Vegapunk.FrontEnd.Shaka.Models
         public string? CouponCode { get; set; }
         public double Discount { get; set; }
         public double CartTotal { get; set; }
-        [Required]
         public string? Name { get; set; }
-        [Required]
         public string? Phone { get; set; }
-        [Required]
         public string? Email { get; set; }
 
     }
