@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Vegapunk.FrontEnd.Shaka.Models;
 using Vegapunk.FrontEnd.Shaka.Service.IService;
+using Vegapunk.FrontEnd.Shaka.Utility;
 
 namespace Vegapunk.FrontEnd.Shaka.Controllers
 {
@@ -48,6 +49,48 @@ namespace Vegapunk.FrontEnd.Shaka.Controllers
                 list = JsonConvert.DeserializeObject<OrderHeaderDto>(Convert.ToString(response.Result));
             }
             return View(list);
+        }
+
+        [HttpPost("OrderReadyForPickup")]
+        public async Task<IActionResult> OrderReadyForPickup(int OrderHeaderId)
+        {
+            string userId = "1";
+            OrderHeaderDto list = new OrderHeaderDto();
+            ResponseDto response = await _orderService.UpdateOrderStatus(OrderHeaderId, StaticData.StatusReadyForPickup);
+            if (response != null && response.IsSuccess == true)
+            {
+                TempData["success"] = "Order status updated.";
+                return RedirectToAction(nameof(OrderDetail), new { OrderHeaderId = OrderHeaderId });
+            }
+            return View();
+        }
+
+        [HttpPost("CompleteOrder")]
+        public async Task<IActionResult> CompleteOrder(int OrderHeaderId)
+        {
+            string userId = "1";
+            OrderHeaderDto list = new OrderHeaderDto();
+            ResponseDto response = await _orderService.UpdateOrderStatus(OrderHeaderId, StaticData.StatusCompleted);
+            if (response != null && response.IsSuccess == true)
+            {
+                TempData["success"] = "Order status updated.";
+                return RedirectToAction(nameof(OrderDetail), new { OrderHeaderId = OrderHeaderId });
+            }
+            return View();
+        }
+
+        [HttpPost("CancelOrder")]
+        public async Task<IActionResult> CancelOrder(int OrderHeaderId)
+        {
+            string userId = "1";
+            OrderHeaderDto list = new OrderHeaderDto();
+            ResponseDto response = await _orderService.UpdateOrderStatus(OrderHeaderId, StaticData.StatusCancelled);
+            if (response != null && response.IsSuccess == true)
+            {
+                TempData["success"] = "Order status updated.";
+                return RedirectToAction(nameof(OrderDetail), new { OrderHeaderId = OrderHeaderId });
+            }
+            return View();
         }
     }
 }

@@ -14,6 +14,7 @@ function loadDataTable() {
 
             // Initialize DataTable with received data
             dataTable = $('#tblData').DataTable({
+                order: [[0, 'desc']],
                 "data": data,
                 "columns": [
                     { data: 'orderHeaderId', "width": "5%" },
